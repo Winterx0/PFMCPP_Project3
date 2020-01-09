@@ -57,7 +57,7 @@ struct GuitarChords
     {
         bool isElectricGuitar = true;
         float inTune = 440.0f;
-    };
+    }; FIXME see style guide line spacing
     void tuneAndPlayGuitar(Guitar guitar);
     Guitar bassGuitar;
 };
@@ -82,7 +82,7 @@ struct Component
 /*
  3)
  */
-class NeuroScience
+class NeuroScience FIXME don't use 'class' yet.  use 'struct'
 {
     int brainScience = 860000000;
     double truthTeller = 10.10;
@@ -92,14 +92,14 @@ class NeuroScience
     {
         bool isSmart = false;
         float genericThought = 500.0f;
-    };
+    }; FIXME see style guide line spacing
     void sleep(NeuroPath neuroPath);
     NeuroPath wormHole;
 };
 /*
  4)
  */
-class DogBreed
+class DogBreed FIXME don't use 'class' yet.  use 'struct'
 {
     int pitBull = 1;
     int terrier = 5;
@@ -111,7 +111,7 @@ class DogBreed
     {
         bool isApuppy = false;
         float litter = 100.0f;
-    };
+    }; FIXME see style guide line spacing
     void walkDog(Dog dog);
     Dog Napolean;
 };
@@ -132,7 +132,7 @@ struct Hammer
         float master = 0.0f;
         void missedWork();
         void noWerk();
-    };
+    }; FIXME see style guide line spacing
     void always(HammerOn hammerOn);
     HammerOn Wall;
 
@@ -161,8 +161,8 @@ struct TreeComponent
         int classWithin  = 1;
         bool treeIsBuilt = false;
         float submit = 14.0f;
-
-    };
+		FIXME remove blank lines
+    }; FIXME see style guide line spacing
     void comp(TreeComponent treeComponent);
     Configure valueTree;
 };
@@ -170,7 +170,7 @@ struct TreeComponent
 /*
  7)
  */
-class MainApp
+class MainApp FIXME don't use 'class' yet.  use 'struct'
 {
     void localNetwork();
     void blackBox();
@@ -178,26 +178,26 @@ class MainApp
     bool appIsRunning;
     bool menuWorks = true;
 
-    class DBG
+    class DBG FIXME don't use 'class' yet.  use 'struct'
     {
         char tp = 'D';
         char dp = 'B';
         char cp = 'G';
         float generate(int localNetwork = 0.0, double blackBox = 15.45);
-
-    };
+FIXME remove blank lines
+    }; FIXME see style guide line spacing
     unsigned int webBased = true;
     int manuals = 3;
 
     DBG main;
 
-    private:
+    private: FIXME no private members yet
     void crashing(MainApp mainApp);
 };
 /*
  8)
  */
-class NewUnderstanding
+class NewUnderstanding FIXME don't use 'class' yet.  use 'struct'
 {
     void building();
 
@@ -208,14 +208,14 @@ class NewUnderstanding
     int x = 25;
     int y = 25;
 
-    private:
+    private: FIXME no private members yet
 
-    class TestFunctions
+    class TestFunctions FIXME don't use 'class' yet.  use 'struct'
     {
         float multiply(int x = 25, int y = 25);
         float add(char time, char to, char build);
         bool compilesCorrect = true;
-    };
+    }; FIXME see style guide line spacing
     void overloading(NewUnderstanding newUnderstanding);
 };
 /*
@@ -235,7 +235,7 @@ struct NewPlug
     {
         bool hasAdapter = false;
         void hazard(NewPlug newPlug);
-    };
+    }; FIXME see style guide line spacing
     void safteyUse(BasicDesign basicDesign);
     BasicDesign socket;
 };
@@ -248,11 +248,11 @@ struct DidItBreak
     float unknown(int didNot = 1, double did = 200.2);
     unsigned int trying = 10;
 
-    class Learn
+    class Learn FIXME don't use 'class' yet.  use 'struct'
     {
         bool isLearning = true;
         float crazyStuff(double check = 1.0, double status = 500.1, double wonder = 30.3, int val = 44, int UDT = 77);
-    };
+    }; FIXME see style guide line spacing
     void checkStatus(DidItBreak didItBreak);
     Learn newThings;
 };
