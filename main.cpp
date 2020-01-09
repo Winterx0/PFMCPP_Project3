@@ -47,19 +47,19 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
-struct guitarChords FIXME Types must begin with capital letters
+struct GuitarChords
 {
     int numStrings = 12;
     double getNumFrets = 2.0;
     unsigned int lengthOfNeck = 0;
     
-    struct guitar FIXME Types must begin with capital letters
+    struct Guitar
     {
         bool isElectricGuitar = true;
         float inTune = 440.0f;
     };
-    void tuneAndPlayGuitar(guitar Guitar);
-    guitar bassGuitar;
+    void tuneAndPlayGuitar(Guitar guitar);
+    Guitar bassGuitar;
 };
 /*
  2)
@@ -82,24 +82,24 @@ struct Component
 /*
  3)
  */
-class neuroScience FIXME Types must begin with capital letters
+class NeuroScience
 {
     int brainScience = 860000000;
     double truthTeller = 10.10;
     unsigned int dreamState = 0;
 
-    struct neuroPath FIXME Types must begin with capital letters
+    struct NeuroPath
     {
         bool isSmart = false;
         float genericThought = 500.0f;
     };
-    void sleep(neuroPath NeuroPath);
-    neuroPath wormHole;
+    void sleep(NeuroPath neuroPath);
+    NeuroPath wormHole;
 };
 /*
  4)
  */
-class dogBreed FIXME Types must begin with capital letters
+class DogBreed
 {
     int pitBull = 1;
     int terrier = 5;
@@ -107,18 +107,18 @@ class dogBreed FIXME Types must begin with capital letters
     float bigDog = 1.7f;
     unsigned int age = 0;
 
-    struct dog FIXME Types must begin with capital letters
+    struct Dog
     {
         bool isApuppy = false;
         float litter = 100.0f;
     };
-    void walkDog(dog Dog);
-    dog Napolean;
+    void walkDog(Dog dog);
+    Dog Napolean;
 };
 /*
  5)
  */
-struct hammer FIXME Types must begin with capital letters
+struct Hammer
 {
     int slam = 333;
     double swing = 2.0;
@@ -126,51 +126,51 @@ struct hammer FIXME Types must begin with capital letters
     float sledge = 77.0f;
     unsigned int force = 0;
 
-    struct hammerOn FIXME Types must begin with capital letters
+    struct HammerOn
     {
         bool isAshredder = true;
         float master = 0.0f;
         void missedWork();
         void noWerk();
     };
-    void always(hammerOn HammerOn);
-    hammerOn Wall;
+    void always(HammerOn hammerOn);
+    HammerOn Wall;
 
-    struct toolType FIXME Types must begin with capital letters
+    struct ToolType
     {
         int nails = 10;
         double screws = 2.2;
         float electricHammer = 440.0f;
     };
 
-    void notEnoughTools(toolType ToolType);
-    toolType metal;
+    void notEnoughTools(ToolType toolType);
+    ToolType metal;
 };
 /*
  6)
  */
-struct treeComponent FIXME Types must begin with capital letters
+struct TreeComponent
 {
     int value = 5000000;
     int tree = 10000000;
     float purposeFunction = 808.1f;
     double process = 4.2;
 
-    struct configure FIXME Types must begin with capital letters
+    struct Configure
     {
         int classWithin  = 1;
         bool treeIsBuilt = false;
         float submit = 14.0f;
 
     };
-    void comp(treeComponent TreeComponent);
-    configure valueTree;
+    void comp(TreeComponent treeComponent);
+    Configure valueTree;
 };
 
 /*
  7)
  */
-class mainApp FIXME Types must begin with capital letters
+class MainApp
 {
     void localNetwork();
     void blackBox();
@@ -192,12 +192,12 @@ class mainApp FIXME Types must begin with capital letters
     DBG main;
 
     private:
-    void crashing(mainApp MainApp);
+    void crashing(MainApp mainApp);
 };
 /*
  8)
  */
-class newUnderstanding FIXME Types must begin with capital letters
+class NewUnderstanding
 {
     void building();
 
@@ -216,45 +216,45 @@ class newUnderstanding FIXME Types must begin with capital letters
         float add(char time, char to, char build);
         bool compilesCorrect = true;
     };
-    void overloading(newUnderstanding NewUnderstanding);
+    void overloading(NewUnderstanding newUnderstanding);
 };
 /*
  9)
  */
-struct newPlug FIXME Types must begin with capital letters
+struct NewPlug
 {
-    newPlug();
-    ~newPlug();
+    NewPlug();
+    ~NewPlug();
     void run();
 
     bool plugIn = true;
     char generic;
     float purchase(int number = 1, double integer = 2.0);
 
-    struct basicDesign FIXME Types must begin with capital letters
+    struct BasicDesign
     {
         bool hasAdapter = false;
-        void hazard(newPlug NewPlug);
+        void hazard(NewPlug newPlug);
     };
-    void safteyUse(basicDesign BasicDesign);
-    basicDesign socket;
+    void safteyUse(BasicDesign basicDesign);
+    BasicDesign socket;
 };
 /*
  10)
  */
-struct didItBreak FIXME Types must begin with capital letters
+struct DidItBreak
 {
     bool brokenCompiler = true;
     float unknown(int didNot = 1, double did = 200.2);
     unsigned int trying = 10;
 
-    class learn FIXME Types must begin with capital letters
+    class Learn
     {
         bool isLearning = true;
         float crazyStuff(double check = 1.0, double status = 500.1, double wonder = 30.3, int val = 44, int UDT = 77);
     };
-    void checkStatus(didItBreak DidItBreak);
-    learn newThings;
+    void checkStatus(DidItBreak didItBreak);
+    Learn newThings;
 };
 
 
