@@ -8,6 +8,7 @@
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+ 
 struct Foot
 {
     int leftFootLength = 9;
