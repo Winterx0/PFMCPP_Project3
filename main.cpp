@@ -13,14 +13,25 @@ struct Foot
     int leftFootLength = 9;
     int rightFootLength = 9;
     int speed = 2;
+    int distance;
     int move;
+    int howFast();
 
     void stepForward(int setSpeed);
+    void stepSize(int setSpeed); 
 };
 
 void Foot::stepForward(int setSpeed)
 {
-    move = leftFootLength * rightFootLength * setSpeed * speed;
+    move = leftFootLength * setSpeed + speed;
+}
+void Foot::stepSize(int setSpeed)
+{
+    distance = rightFootLength * setSpeed + speed;
+}
+int Foot::howFast()
+{
+    return move + distance;
 }
 
 struct Person
@@ -31,14 +42,15 @@ struct Person
     float IQ;
     unsigned int meyersBriggsScore;
 
+    int leg();
     int pathTraveled;
     Foot left;
     Foot right;
 
-    void whichFootStepsFirst(int setSpeed, bool startWithLeftFoot);
+    void run(int setSpeed, bool startWithLeftFoot);
 };
 
-void Person::whichFootStepsFirst(int setSpeed, bool startWithLeftFoot)
+void Person::run(int setSpeed, bool startWithLeftFoot)
 {
     if(startWithLeftFoot == true)
     {
@@ -49,6 +61,10 @@ void Person::whichFootStepsFirst(int setSpeed, bool startWithLeftFoot)
         right.stepForward(setSpeed);
     }
     pathTraveled += left.move + right.move;
+}
+int Person::leg()
+{
+    return pathTraveled;
 }
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -82,7 +98,9 @@ struct GuitarChords
     };
 
     void tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float inTune);
+
     int ready;
+    int play();
 };
 
 void GuitarChords::tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float inTune)
@@ -95,6 +113,10 @@ void GuitarChords::tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float
     {
         steelNeck *=+ lengthOfNeck + inTune + 2;
     }
+}
+int GuitarChords::play()
+{
+    return {};
 }
  
 /*
