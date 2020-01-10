@@ -8,11 +8,48 @@
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Foot
+{
+    int leftFootLength = 9;
+    int rightFootLength = 9;
+    int speed = 2;
+    int move;
 
+    void stepForward(int setSpeed);
+};
 
+void Foot::stepForward(int setSpeed)
+{
+    move = leftFootLength * rightFootLength * setSpeed * speed;
+}
 
+struct Person
+{
+    int age;
+    int height;
+    float weight;
+    float IQ;
+    unsigned int meyersBriggsScore;
 
+    int pathTraveled;
+    Foot left;
+    Foot right;
 
+    void whichFootStepsFirst(int setSpeed, bool startWithLeftFoot);
+};
+
+void Person::whichFootStepsFirst(int setSpeed, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        left.stepForward(setSpeed);
+    }
+    else
+    {
+        right.stepForward(setSpeed);
+    }
+    pathTraveled += left.move + right.move;
+}
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
  
@@ -31,27 +68,44 @@
  */
 struct GuitarChords
 {
+    int tone;
     int numStrings = 12;
+    double volumeKnob = 2;
     double getNumFrets = 2.0;
-    unsigned int lengthOfNeck = 0;
+    unsigned int lengthOfNeck;
     
     struct Guitar
     {
+        int steelNeck;
         bool isElectricGuitar = true;
         float inTune = 440.0f;
     };
 
-    void tuneAndPlayGuitar( Guitar guitar );
-
-    Guitar bassGuitar;
+    void tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float inTune);
+    int ready;
 };
+
+void GuitarChords::tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float inTune)
+{
+    if(isElectricGuitar)
+    {
+        lengthOfNeck *= numStrings + volumeKnob * tone + ready / getNumFrets * 0.5;
+    }
+    else
+    {
+        steelNeck *=+ lengthOfNeck + inTune + 2;
+    }
+}
+ 
 /*
  2)
  */
 struct Component
 {
+    int current;
     int isVoltage = 5000;
     double powerOut = 0.2;
+    double powerIn = 0.4;
     unsigned int amountOfPower = 0;
 
     struct DCUnit
@@ -60,15 +114,28 @@ struct Component
         float hasCable = 3.0f;
     };
 
-    void plugIn( DCUnit dcUnit );
-
-    DCUnit speaker;
+    void plugIn( bool connectsToComputer, float hasCable);
+    int shielded;
 };
+
+void Component::plugIn(bool connectsToComputer, float hasCable)
+{
+    if(connectsToComputer)
+    {
+        amountOfPower *= isVoltage * powerOut / powerIn + 100 * current;
+    }
+    else
+    {
+        hasCable *= amountOfPower / 2;
+    }
+    shielded *= hasCable + isVoltage * 4;
+}
 /*
  3)
  */
 struct NeuroScience
 {
+    int neurons;
     int brainScience = 860000000;
     double truthTeller = 10.10;
     unsigned int dreamState = 0;
@@ -79,10 +146,23 @@ struct NeuroScience
         float genericThought = 500.0f;
     };
 
-    void sleep( NeuroPath neuroPath );
+    void sleep(bool isSmart, float genericThought);
+    int synapse;
 
-    NeuroPath wormHole;
 };
+
+void NeuroScience::sleep(bool isSmart, float genericThought)
+{
+    if(isSmart)
+    {
+        dreamState *= brainScience * truthTeller + neurons;
+    }
+    else
+    {
+        genericThought *= 100;
+    }
+    synapse *= dreamState * genericThought;
+}
 /*
  4)
  */
