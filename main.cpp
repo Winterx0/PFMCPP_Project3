@@ -25,10 +25,12 @@ void Foot::stepForward(int setSpeed)
 {
     move = leftFootLength * setSpeed + speed;
 }
+
 void Foot::stepSize(int setSpeed)
 {
     distance = rightFootLength * setSpeed + speed;
 }
+
 int Foot::howFast()
 {
     return move + distance;
@@ -36,18 +38,19 @@ int Foot::howFast()
 
 struct Person
 {
+    int leg();
     int age;
     int height;
     float weight;
     float IQ;
     unsigned int meyersBriggsScore;
 
-    int leg();
-    int pathTraveled;
     Foot left;
     Foot right;
 
     void run(int setSpeed, bool startWithLeftFoot);
+
+    int pathTraveled;
 };
 
 void Person::run(int setSpeed, bool startWithLeftFoot)
@@ -60,8 +63,10 @@ void Person::run(int setSpeed, bool startWithLeftFoot)
     {
         right.stepForward(setSpeed);
     }
+
     pathTraveled += left.move + right.move;
 }
+
 int Person::leg()
 {
     return pathTraveled;
@@ -114,6 +119,7 @@ void GuitarChords::tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float
         steelNeck *=+ lengthOfNeck + inTune + 2;
     }
 }
+
 int GuitarChords::play()
 {
     return {};
@@ -137,7 +143,9 @@ struct Component
     };
 
     void plugIn( bool connectsToComputer, float hasCable);
+
     int shielded;
+    int unshielded();
 };
 
 void Component::plugIn(bool connectsToComputer, float hasCable)
@@ -150,7 +158,13 @@ void Component::plugIn(bool connectsToComputer, float hasCable)
     {
         hasCable *= amountOfPower / 2;
     }
+
     shielded *= hasCable + isVoltage * 4;
+}
+
+int Component::unshielded()
+{
+    return {};
 }
 /*
  3)
@@ -169,7 +183,9 @@ struct NeuroScience
     };
 
     void sleep(bool isSmart, float genericThought);
+
     int synapse;
+    int cellCount();
 
 };
 
@@ -183,7 +199,13 @@ void NeuroScience::sleep(bool isSmart, float genericThought)
     {
         genericThought *= 100;
     }
+
     synapse *= dreamState * genericThought;
+}
+
+int NeuroScience::cellCount()
+{
+    return {};
 }
 /*
  4)
@@ -202,49 +224,105 @@ struct DogBreed
         float litter = 100.0f;
     };
 
-    void walkDog( Dog dog );
+    void walkDog( bool isApuppy, float litter );
 
-    Dog Napolean;
+    int barks();
 };
+
+void DogBreed::walkDog(bool isApuppy, float litter)
+{
+    if(isApuppy)
+    {
+        age *= pitBull + mixedBreed;
+    }
+    else
+    {
+        age *= terrier + bigDog * litter;
+    }
+}
+
+int DogBreed::barks()
+{
+    return {};
+}
 /*
  5)
  */
 struct Hammer
 {
+    int wall; 
     int slam = 333;
     double swing = 2.0;
+    double hit = 2.6;
     float steel = 13.3f;
     float sledge = 77.0f;
     unsigned int force = 0;
+    unsigned int heavyDuty;
 
     struct HammerOn
     {
         bool isAshredder = true;
         float master = 0.0f;
-        void missedWork();
-        void noWerk();
     };
 
-    void always( HammerOn hammerOn );
+    void always( bool isAshredder, float master );
 
-    HammerOn Wall;
+    int build();
 
     struct ToolType
     {
+        int blocks;
         int nails = 10;
         double screws = 2.2;
         float electricHammer = 440.0f;
     };
 
-    void notEnoughTools( ToolType toolType );
+    void notEnoughTools(int blocks, int nails, double screws, float electricHammer);
 
-    ToolType metal;
+    int breakIt();
 };
+
+void Hammer::always(bool isAshredder, float master)
+{
+    if(isAshredder)
+    {
+        force *= swing + hit * slam + wall;
+    }
+    else
+    {
+        force *= steel + sledge * slam + wall;
+    }
+
+    master *= force * heavyDuty + 1;
+}
+
+int Hammer::build()
+{
+    return {};
+}
+
+void Hammer::notEnoughTools(int blocks, int nails, double screws, float electricHammer)
+{
+    if(bool hammerHits = true)
+    {
+        blocks *= nails + screws;
+    }
+    else
+    {
+        blocks *= nails + electricHammer;
+    }
+}
+
+int Hammer::breakIt()
+{
+    return {};
+}
 /*
  6)
  */
 struct TreeComponent
 {
+    int test;
     int value = 5000000;
     int tree = 10000000;
     float purposeFunction = 808.1f;
@@ -252,107 +330,207 @@ struct TreeComponent
 
     struct Configure
     {
+        int nestTest;
         int classWithin  = 1;
         bool treeIsBuilt = false;
         float submit = 14.0f;
     };
 
-    void comp( TreeComponent treeComponent );
+    void comp( int nestTest, int classWithin, bool treeIsBuilt,  float submit);
 
-    Configure valueTree;
+    int valueTree;
+    int internally;
+    int setUp();
 };
+
+void TreeComponent::comp( int nestTest, int classWithin, bool treeIsBuilt,  float submit)
+{
+    if(treeIsBuilt)
+    {
+        valueTree *= value + purposeFunction;
+    }
+    else
+    {
+        valueTree *= tree + process;
+    }
+
+    test *= submit * nestTest + classWithin * internally;
+}
+
+int TreeComponent::setUp()
+{
+    return {};
+}
 
 /*
  7)
  */
 struct MainApp
 {
-    void localNetwork();
-    void blackBox();
-
-    bool appIsRunning;
-    bool menuWorks = true;
+    float blackBox = 3.0f;
+    float localNetwork = 2.0f;
+    unsigned int webBased = true;
+    int manuals = 3;
+    int byteFill;
+    int reTry;
 
     struct DBG
     {
-        char tp = 'D';
-        char dp = 'B';
-        char cp = 'G';
-        float generate(int localNetwork = 0.0, double blackBox = 15.45);
+        bool menuWorks = true;
+        float generate(int localWeb = 0.0, double staticMem = 15.45);
     };
 
-    unsigned int webBased = true;
-    int manuals = 3;
+    void crashing(bool menuWorks, float generate);
 
-    DBG main;
-
-    void crashing(MainApp mainApp);
+    int newest();
 };
+
+void MainApp::crashing(bool menuWorks, float generate)
+{
+    if(menuWorks)
+    {
+        reTry *= blackBox + 6;
+    }
+    else
+    {
+        reTry *= localNetwork + 8;
+    }
+
+    webBased *= byteFill + manuals * generate;
+}
+
+int MainApp::newest()
+{
+    return {};
+}
 /*
  8)
  */
 struct NewUnderstanding
 {
-    void building();
-
     char time = 'N';
     char to = 'E';
     char build = 'W';
+    char block = '!';
 
     int x = 25;
     int y = 25;
+    int z();
 
     struct TestFunctions
     {
         float multiply(int x = 25, int y = 25);
-        float add(char time, char to, char build);
+        float add(char time, char to, char build, char block);
         bool compilesCorrect = true;
     };
 
-    void overloading(NewUnderstanding newUnderstanding);
+    void overloading(float multiply, float add, bool compilesCorrect);
 };
+
+void NewUnderstanding::overloading(float multiply, float add, bool compilesCorrect)
+{
+    if(compilesCorrect)
+    {
+        x *= multiply + 1;
+    }
+    else
+    {
+        y *= add + 2;
+    }
+}
+
+int NewUnderstanding::z()
+{
+    return {};
+}
 /*
  9)
  */
 struct NewPlug
 {
-    NewPlug();
-    ~NewPlug();
-    void run();
-
-    bool plugIn = true;
-    char generic;
+    int toolUse;
+    int getTools = 5;
+    int generics;
     float purchase(int number = 1, double integer = 2.0);
 
     struct BasicDesign
     {
         bool hasAdapter = false;
-        void hazard(NewPlug newPlug);
+        int hazard;
     };
 
-    void safteyUse(BasicDesign basicDesign);
-
-    BasicDesign socket;
+    void safteyUse(bool hasAdapter, int hazard, float purchase);
+    int workFlow();
 };
+
+void NewPlug::safteyUse(bool hasAdapter, int hazard, float purchase)
+{
+    if(hasAdapter)
+    {
+        hazard *= getTools * purchase + 1;
+    }
+    else
+    {
+        hazard *= getTools * generics;
+    }
+
+    toolUse *= getTools * generics * purchase + 1;
+}
+
+int NewPlug::workFlow()
+{
+    return {};
+}
 /*
  10)
  */
 struct DidItBreak
 {
-    bool brokenCompiler = true;
     float unknown(int didNot = 1, double did = 200.2);
     unsigned int trying = 10;
+    int makeHappen;
+    int doStuff;
+    int needThings();
 
     struct Learn
     {
+        bool brokenCompiler = true;
         bool isLearning = true;
         float crazyStuff(double check = 1.0, double status = 500.1, double wonder = 30.3, int val = 44, int UDT = 77);
     };
 
-    void checkStatus(DidItBreak didItBreak);
-
-    Learn newThings;
+    void doubleFunction(bool brokenCompiler, float unknown);
+    void checkStatus(bool isLearning, float crazyStuff);
 };
+
+void DidItBreak::doubleFunction(bool brokenCompiler, float unknown)
+{
+    if(brokenCompiler)
+    {
+        makeHappen *= unknown + 1;
+    }
+    else
+    {
+        trying *= unknown + 2;
+    }
+}
+
+void DidItBreak::checkStatus(bool isLearning, float crazyStuff)
+{
+    if(isLearning)
+    {
+        doStuff *= crazyStuff + 1;
+    }
+    else
+    {
+        doStuff *= crazyStuff + 2;
+    }
+}
+
+int DidItBreak::needThings()
+{
+    return {};
+}
 
 
 
