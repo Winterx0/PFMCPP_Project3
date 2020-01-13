@@ -128,7 +128,7 @@ struct GuitarChords
         float tuneKey { 4.0f };
         bool isElectricGuitar = true;
         
-        Guitar() : steelNeck(0) {} }
+        Guitar() : steelNeck(0) {} 
         void printGuitar() 
         {
             std::cout << "Guitar " << "Key: " << steelNeck + tuneKey << "  " << "Hz: " << inTune << std::endl;
