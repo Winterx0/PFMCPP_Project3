@@ -86,16 +86,18 @@ struct GuitarChords
         float tuneKey { 4.0f };
         bool isElectricGuitar = true;
         
-        Guitar() : steelNeck(0) {} 
+        Guitar() : steelNeck(0) { }
         void printGuitar() 
         {
-            std::cout << "Guitar " << "Key: " << steelNeck + tuneKey << "  " << "Hz: " << inTune << std::endl;
+            for(steelNeck = 0; steelNeck < 3; ++steelNeck)
+            std::cout << "Guitar Key: " << steelNeck + tuneKey << "  " << "Hz: " << inTune << std::endl;
         }
     };
 
-    GuitarChords() : tone(0) {}
+    GuitarChords() : tone(0) { }
     void printGuitarChords()
     {
+        for( tone = 0; tone <= 3; ++tone )
         std::cout << "Guitar " << tone + numStrings << " String Ibanez" << std::endl;
     }
 
@@ -138,17 +140,19 @@ struct Component
         int box;
         float hasCable { 3.0f };
         bool connectsToComputer = true;
-    
-        DCUnit() : box(0) {}
+        
+        DCUnit() : box(0) { }
         void printDCUnit()
         {
+            for( box = 0; box < 3; ++box)
             std::cout << "DC Unit " << box + hasCable << " USB" << std::endl;
         }
     };
     
-    Component() : current(0) {}
+    Component() : current(0) { }
     void printComponent()
     {
+        for(current = 1; current <= 3; ++current)
         std::cout << "Component " << current + isVoltage << " watts"<< std::endl;
     }
 
@@ -192,16 +196,18 @@ struct NeuroScience
         float genericThought { 500.0f };
         bool isSmart = false;
         
-        NeuroPath() : neuroPlasticity(0) {}
+        NeuroPath() : neuroPlasticity(0) { }
         void printNeuroPath()
         {
+            for(neuroPlasticity = 0; neuroPlasticity < 3; ++neuroPlasticity)
             std::cout << "Neuro Path " << neuroPlasticity + genericThought << "% Cognitive Function" << std::endl;
         }
     };
     
-    NeuroScience() : neurons(0) {}
+    NeuroScience() : neurons(0) { }
     void printNeuroScience()
     {
+        for(neurons = 1; neurons <= 3; ++neurons)
         std::cout << "Neuro Science " << neurons + brainScience << " Neurons" << std::endl;
     }
 
@@ -248,16 +254,18 @@ struct DogBreed
         float litter { 100.0f };
         bool isApuppy = false;
         
-        Dog() : manyPuppies(0) {}
+        Dog() : manyPuppies(0) { }
         void printDog()
         {
+            for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies)
             std::cout << "Dog " << manyPuppies + litter << "% Chihuahua" << std::endl;
         }    
     };
     
-    DogBreed() : pupper(0) {}
+    DogBreed() : pupper(0) { }
     void printDogBreed()
     {
+        for(pupper = 0; pupper < 3; ++pupper)
         std::cout << "Dog Breed " << pupper + pitBull * mixedBreed << " puppies" << std::endl;
     }
 
@@ -303,17 +311,19 @@ struct Hammer
         float master { 0.0f };
         bool isAshredder = true;
         
-        HammerOn() : ham(0) {}             //3) the constructor
-        void printHammerOn()            //1) the member function
+        HammerOn() : ham(0) { }
+        void printHammerOn()
         {
-            std::cout << "Hammer On " << ham + 100 << "% Man O War" << std::endl;      //5) printing out something interesting
+            for(ham = 0; ham < 3; ++ham)
+            std::cout << "Hammer On " << ham + 100 << "% Man O War" << std::endl;
         }    
     };
     
-    Hammer() : heavyDuty(0) {}             //3) the constructor
-    void printHammer()            //1) the member function
+    Hammer() : heavyDuty(0) { }
+    void printHammer()
     {
-        std::cout << "Hammmer " << heavyDuty + sledge * steel / slam << " Hz of Thunder"<< std::endl;  //5) printing out something interesting
+        for(heavyDuty = 0; heavyDuty < 3; ++heavyDuty)
+        std::cout << "Hammmer " << heavyDuty + sledge * steel / slam << " Hz of Thunder"<< std::endl;
     }
 
     void always( bool isAshredder, float master );
@@ -328,9 +338,10 @@ struct Hammer
         double staples = 1.0;
         float electricHammer { 440.0f };
         
-        ToolType() : blocks(0) {}
+        ToolType() : blocks(0) { }
         void printToolType()
         {
+            for(blocks = 0; blocks < 3; ++blocks)
             std::cout << "Tool Type " << blocks + nails << " nails" << std::endl; 
         }
         
@@ -395,18 +406,26 @@ struct TreeComponent
         float submit { 14.0f };
         bool treeIsBuilt = false;
         
-        Configure() : nestTest(0) {}             //3) the constructor
-        void printConfigure()            //1) the member function
+        Configure() : nestTest(0) { }
+        void printConfigure()
         {
-            std::cout << "Configure " << nestTest + classWithin * submit << " arrays" << std::endl;  //5) printing out something interesting
+            while(nestTest < 3)
+            {
+                std::cout << "Configure " << nestTest + classWithin * submit << " arrays" << std::endl;
+                nestTest += 1;
+            }
         }    
         
     };
     
-    TreeComponent() : test(0) {}
+    TreeComponent() : test(0) { }
     void printTreeComponent()
     {
-        std::cout << "Tree Component " << test + value * tree << std::endl;
+        while(test < 3)
+        {
+            std::cout << "Tree Component " << test + value * tree << std::endl;
+            test += 1;
+        }
     }    
 
     void structure( int nestTest, int classWithin, bool treeIsBuilt,  float submit);
@@ -453,18 +472,26 @@ struct MainApp
         float generate(int localWeb = 0.0, double staticMem = 15.45);
         bool menuWorks = true;
         
-        DBG() : d(0) {}
+        DBG() : d(0) { }
         void printDBG()
         {
-            std::cout << "DBG " << d + 1 << " error" << std::endl;
+            while( d < 3)
+            {
+                std::cout << "DBG " << d + 1 << " error" << std::endl;
+                d += 1;
+            }    
         }
         
     };
     
-    MainApp() : reTry(0) {}
+    MainApp() : reTry(0) { }
     void printMainApp()
     {
-        std::cout << "Main App " << reTry + manuals * blackBox * localNetwork << " MB" << std::endl;
+        while(reTry < 3)
+        {
+            std::cout << "Main App " << reTry + manuals * blackBox * localNetwork << " MB" << std::endl;
+            reTry += 1;
+        }    
     }    
 
     void crashing(bool menuWorks, float generate);
@@ -513,17 +540,25 @@ struct NewUnderstanding
         float add(char time, char to, char build, char the, char block);
         bool compilesCorrect = true;
         
-        TestFunctions() : t(0) {}
+        TestFunctions() : t(0) { }
         void printTestFunctions()
         {
-            std::cout << "Test Functions " << t << "% accuracy" << std::endl;
+            while(t < 3)
+            {
+                std::cout << "Test Functions " << t << "% accuracy" << std::endl;
+                t +=1;
+            }    
         }    
     };
     
-    NewUnderstanding() : w(0) {}
+    NewUnderstanding() : w(0) { }
     void printNewUnderstanding()
     {
-        std::cout << "New Understanding " << w + x * y << "%" << std::endl;
+        while(w < 3)
+        {
+            std::cout << "New Understanding " << w + x * y << "%" << std::endl;
+            w += 1;
+        }
     }
 
     void overloading(float multiply, float add, bool compilesCorrect);
@@ -562,17 +597,25 @@ struct NewPlug
         int b;
         bool hasAdapter = false;
         
-        BasicDesign() : b(0) {}
+        BasicDesign() : b(0) { }
         void printBasicDesign()
         {
-            std::cout << "Basic Design " << b + 2 << " sockets" << std::endl;
+            while(b < 3)
+            {
+                std::cout << "Basic Design " << b + 2 << " sockets" << std::endl;
+                b += 1;
+            }
         }       
     };
     
-    NewPlug() : toolUse(0) {}
+    NewPlug() : toolUse(0) { }
     void printNewPlug()
     {
-        std::cout << "New Plug " << toolUse + getTools << " watts" << std::endl;
+        while(toolUse < 3)
+        {
+            std::cout << "New Plug " << toolUse + getTools << " watts" << std::endl;
+            toolUse += 1;
+        }
     }
 
     void safteyUse(bool hasAdapter, int hazard, float purchase);
@@ -615,19 +658,25 @@ struct DidItBreak
         bool isLearning = true;
         float crazyStuff(double check = 1.0, double status = 500.1, double wonder = 30.3, int val = 44, int UDT = 77);
         
-        Learn() : l(0) {}
+        Learn() : l(0) { }
         void printLearn()
         {
-            std::cout << "Learn " << l + 10 << " new things" << std::endl;
+            while(l < 3)
+            {
+                std::cout << "Learn " << l + 10 << " new things" << std::endl;
+                l +=1;
+            }
         }        
-        
-        short knowledge;
     };
     
-    DidItBreak() : makeHappen(0) {}
+    DidItBreak() : makeHappen(0) { }
     void printDidItBreak()
     {
-        std::cout << "Did It Break " << makeHappen + 100 << "% did" << std::endl;
+        while(makeHappen < 3)
+        {
+            std::cout << "Did It Break " << makeHappen + 100 << "% did" << std::endl;
+            makeHappen +=1;
+        }
     }    
 
     void doubleFunction(bool brokenCompiler, float unknown);
