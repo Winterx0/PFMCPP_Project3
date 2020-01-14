@@ -477,7 +477,7 @@ struct MainApp
         {
             while( d < 3)
             {
-                std::cout << "DBG " << d + 1 << " error" << std::endl;
+                std::cout << "DBG " << d + 1 << " errors" << std::endl;
                 d += 1;
             }    
         }
