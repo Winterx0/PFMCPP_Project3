@@ -90,7 +90,7 @@ struct GuitarChords
         void printGuitar() 
         {
             for(steelNeck = 0; steelNeck < 3; ++steelNeck)
-            std::cout << "Guitar Key: " << steelNeck + tuneKey << "  " << "Hz: " << inTune << std::endl;
+            std::cout << "Guitar Key: " << steelNeck + tuneKey << "  " << "Hz: " << inTune << std::endl; FIXME indentation
         }
     };
 
@@ -98,7 +98,7 @@ struct GuitarChords
     void printGuitarChords()
     {
         for( tone = 0; tone <= 3; ++tone )
-        std::cout << "Guitar " << tone + numStrings << " String Ibanez" << std::endl;
+        std::cout << "Guitar " << tone + numStrings << " String Ibanez" << std::endl; FIXME indentation
     }
 
     void tuneAndPlayGuitar(int steelNeck, bool isElectricGuitar, float inTune, float tuneKey);
@@ -145,7 +145,7 @@ struct Component
         void printDCUnit()
         {
             for( box = 0; box < 3; ++box)
-            std::cout << "DC Unit " << box + hasCable << " USB" << std::endl;
+            std::cout << "DC Unit " << box + hasCable << " USB" << std::endl; FIXME indentation
         }
     };
     
@@ -153,7 +153,7 @@ struct Component
     void printComponent()
     {
         for(current = 1; current <= 3; ++current)
-        std::cout << "Component " << current + isVoltage << " watts"<< std::endl;
+        std::cout << "Component " << current + isVoltage << " watts"<< std::endl; FIXME indentation
     }
 
     void plugIn( bool connectsToComputer, float hasCable);
@@ -200,7 +200,7 @@ struct NeuroScience
         void printNeuroPath()
         {
             for(neuroPlasticity = 0; neuroPlasticity < 3; ++neuroPlasticity)
-            std::cout << "Neuro Path " << neuroPlasticity + genericThought << "% Cognitive Function" << std::endl;
+            std::cout << "Neuro Path " << neuroPlasticity + genericThought << "% Cognitive Function" << std::endl; FIXME indentation
         }
     };
     
@@ -208,7 +208,7 @@ struct NeuroScience
     void printNeuroScience()
     {
         for(neurons = 1; neurons <= 3; ++neurons)
-        std::cout << "Neuro Science " << neurons + brainScience << " Neurons" << std::endl;
+        std::cout << "Neuro Science " << neurons + brainScience << " Neurons" << std::endl; FIXME indentation
     }
 
     void sleep(bool isSmart, float genericThought);
@@ -258,7 +258,7 @@ struct DogBreed
         void printDog()
         {
             for(manyPuppies = 0; manyPuppies < 3; ++manyPuppies)
-            std::cout << "Dog " << manyPuppies + litter << "% Chihuahua" << std::endl;
+            std::cout << "Dog " << manyPuppies + litter << "% Chihuahua" << std::endl; FIXME indentation
         }    
     };
     
@@ -266,7 +266,7 @@ struct DogBreed
     void printDogBreed()
     {
         for(pupper = 0; pupper < 3; ++pupper)
-        std::cout << "Dog Breed " << pupper + pitBull * mixedBreed << " puppies" << std::endl;
+        std::cout << "Dog Breed " << pupper + pitBull * mixedBreed << " puppies" << std::endl; FIXME indentation
     }
 
     void walkDog( bool isApuppy, float litter );
@@ -315,7 +315,7 @@ struct Hammer
         void printHammerOn()
         {
             for(ham = 0; ham < 3; ++ham)
-            std::cout << "Hammer On " << ham + 100 << "% Man O War" << std::endl;
+            std::cout << "Hammer On " << ham + 100 << "% Man O War" << std::endl; FIXME indentation
         }    
     };
     
@@ -323,7 +323,7 @@ struct Hammer
     void printHammer()
     {
         for(heavyDuty = 0; heavyDuty < 3; ++heavyDuty)
-        std::cout << "Hammmer " << heavyDuty + sledge * steel / slam << " Hz of Thunder"<< std::endl;
+        std::cout << "Hammmer " << heavyDuty + sledge * steel / slam << " Hz of Thunder"<< std::endl; FIXME indentation
     }
 
     void always( bool isAshredder, float master );
@@ -342,7 +342,7 @@ struct Hammer
         void printToolType()
         {
             for(blocks = 0; blocks < 3; ++blocks)
-            std::cout << "Tool Type " << blocks + nails << " nails" << std::endl; 
+            std::cout << "Tool Type " << blocks + nails << " nails" << std::endl;  FIXME indentation
         }
         
         int bricks;
